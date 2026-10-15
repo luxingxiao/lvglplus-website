@@ -1,0 +1,6 @@
+---
+import Doc from '../../components/Doc.astro';import {docs} from '../../content/docs';
+export function getStaticPaths(){return docs.map(doc=>({params:{slug:doc.slug},props:{doc}}));}
+const {doc}=Astro.props;
+---
+<Doc doc={doc} lang="zh"/>

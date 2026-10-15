@@ -1,0 +1,29 @@
+{
+  "name": "lvglplus-website",
+  "version": "1.0.0",
+  "description": "The official LVGL Plus website. XML to every screen.",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "test": "node --test tests/*.test.mjs",
+    "sync:demo": "node scripts/sync-demo.mjs",
+    "design:generate": "python3 .agents/skills/ui-ux-pro-max/scripts/search.py \"open-source developer platform landing\" --design-system -p \"LVGL Plus\" -f markdown"
+  },
+  "license": "Apache-2.0",
+  "type": "module",
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "playwright-core": "1.56.1",
+    "ui-ux-pro-max-cli": "2.15.0"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "5.2.8",
+    "@fontsource-variable/space-grotesk": "5.2.10",
+    "astro": "7.3.8"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=24"
+  }
+}

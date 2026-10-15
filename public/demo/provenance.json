@@ -1,0 +1,29 @@
+{
+  "repository": "https://github.com/luxingxiao/lvglplus",
+  "commit": "86b80a7ad572b42ab334699ebcc2d1328b2a47a0",
+  "lvgl": "9.5.0",
+  "irVersion": 2,
+  "updated": "2026-10-15",
+  "files": [
+    {
+      "path": "lvp.js",
+      "bytes": 63344,
+      "sha256": "b6ac7623e7d34e23237e4093009b025a90829848fc03d3a53d18e2ed3142515c"
+    },
+    {
+      "path": "lvp.wasm",
+      "bytes": 748546,
+      "sha256": "d9cce68e6a15e11521101dcc4b967da69ccee21419a322ca782dacc657f1671a"
+    },
+    {
+      "path": "vehicle.lvp",
+      "bytes": 5543,
+      "sha256": "5f238c8a0821170b1c68cb29bd45e6af4da6970ae578bd52877c796cfd3b8b43"
+    },
+    {
+      "path": "model.json",
+      "bytes": 3713,
+      "sha256": "80e0e50aee5f55bab4a3d4500a38d85d809d2de77d9475e782301f76a1265031"
+    }
+  ]
+}

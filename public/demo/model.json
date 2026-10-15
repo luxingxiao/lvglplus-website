@@ -1,0 +1,214 @@
+{
+  "signals": [
+    {
+      "name": "vehicle.speed",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 1500,
+      "unit": "km/h"
+    },
+    {
+      "name": "battery.soc",
+      "type": "number",
+      "initial": 82,
+      "timeoutMs": 1500,
+      "unit": "%"
+    },
+    {
+      "name": "motor.temperature",
+      "type": "number",
+      "initial": 34,
+      "timeoutMs": 1500,
+      "unit": "C"
+    },
+    {
+      "name": "lights.left",
+      "type": "boolean",
+      "initial": false,
+      "timeoutMs": 1500,
+      "unit": ""
+    },
+    {
+      "name": "lights.right",
+      "type": "boolean",
+      "initial": false,
+      "timeoutMs": 1500,
+      "unit": ""
+    },
+    {
+      "name": "lights.highBeam",
+      "type": "boolean",
+      "initial": false,
+      "timeoutMs": 1500,
+      "unit": ""
+    },
+    {
+      "name": "vehicle.alarm",
+      "type": "boolean",
+      "initial": false,
+      "timeoutMs": 1500,
+      "unit": ""
+    },
+    {
+      "name": "vehicle.trip",
+      "type": "number",
+      "initial": 124.6,
+      "timeoutMs": 1500,
+      "unit": "km"
+    },
+    {
+      "name": "settings.brightness",
+      "type": "integer",
+      "initial": 70,
+      "timeoutMs": 0,
+      "unit": ""
+    },
+    {
+      "name": "settings.sport",
+      "type": "boolean",
+      "initial": false,
+      "timeoutMs": 0,
+      "unit": ""
+    },
+    {
+      "name": "vm.speedMph",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 0
+        },
+        {
+          "op": "const",
+          "value": 0.621371
+        },
+        {
+          "op": "mul"
+        }
+      ]
+    },
+    {
+      "name": "vm.overspeed",
+      "type": "boolean",
+      "initial": false,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 0
+        },
+        {
+          "op": "const",
+          "value": 100
+        },
+        {
+          "op": "gt"
+        }
+      ]
+    },
+    {
+      "name": "vm.remainingKm",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 1
+        },
+        {
+          "op": "const",
+          "value": 1.8
+        },
+        {
+          "op": "mul"
+        }
+      ]
+    },
+    {
+      "name": "vm.hideLeft",
+      "type": "boolean",
+      "initial": false,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 3
+        },
+        {
+          "op": "not"
+        }
+      ]
+    },
+    {
+      "name": "vm.hideRight",
+      "type": "boolean",
+      "initial": false,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 4
+        },
+        {
+          "op": "not"
+        }
+      ]
+    },
+    {
+      "name": "vm.hideBeam",
+      "type": "boolean",
+      "initial": false,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "not"
+        }
+      ]
+    },
+    {
+      "name": "vm.hideAlarm",
+      "type": "boolean",
+      "initial": false,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 6
+        },
+        {
+          "op": "not"
+        }
+      ]
+    },
+    {
+      "name": "vm.hideOverspeed",
+      "type": "boolean",
+      "initial": false,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 11
+        },
+        {
+          "op": "not"
+        }
+      ]
+    }
+  ]
+}
