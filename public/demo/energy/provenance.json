@@ -1,0 +1,64 @@
+{
+  "repository": "https://github.com/luxingxiao/lvglplus",
+  "commit": "b2137fd256427af3cbb9c00a83ea9d3e571ae385",
+  "example": "examples/energy-console",
+  "lvgl": "9.5.0",
+  "irVersion": 3,
+  "sdkAbi": 2,
+  "width": 1024,
+  "height": 600,
+  "updated": "2026-10-16",
+  "initialRgbSha256": "b6d7b25aba867c41f8d7da25db466f49b13c8293ef2f2af1959760fe1a404747",
+  "files": [
+    {
+      "path": "lvp.js",
+      "bytes": 63542,
+      "sha256": "420a4f14d0fe511e8a76cddc988591342c2b38ddab5d703d0c1fd10c86d91c01"
+    },
+    {
+      "path": "lvp.wasm",
+      "bytes": 777081,
+      "sha256": "b65b4e72171ef2a211c1c54ff755663e39fe3a725d43e1b4c6cbea0c9316a96f"
+    },
+    {
+      "path": "ui.lvp",
+      "bytes": 22153,
+      "sha256": "a44cab8cc9a3dc0309b1986efd5b7034aff5574a41cbdbca4770c734167d4ba1"
+    },
+    {
+      "path": "model.json",
+      "bytes": 32886,
+      "sha256": "7590eb37dd4481e5d6accd7bf2552cacfe614146eb166d94fa74210be9321a27"
+    },
+    {
+      "path": "poster.png",
+      "bytes": 68817,
+      "sha256": "5d277b7b638696732830ee1efb77904977af805cb4130c5d34382274068907e4"
+    },
+    {
+      "path": "source/dashboard.xml",
+      "bytes": 9374,
+      "sha256": "5c0ccbd7aba001aadbc38af2e706895d856f029139cf1958988264576173babf"
+    },
+    {
+      "path": "source/model.xml",
+      "bytes": 1893,
+      "sha256": "7dbd95196609bd8d43b86c144b04cfb31594f40f6997d208c6a432211a59f9bc"
+    },
+    {
+      "path": "source/plus.project.json",
+      "bytes": 196,
+      "sha256": "ddc59e68edf8fe918e7ad64d5002a624b85be733c1752306e1f4a1337397b05c"
+    },
+    {
+      "path": "LVGLPLUS-LICENSE.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "LVGL-LICENSE.txt",
+      "bytes": 1072,
+      "sha256": "27a80bd36832ab42d35ad60c08b2b230a807a9bc0d58e94ec1531543dc49cbe8"
+    }
+  ]
+}

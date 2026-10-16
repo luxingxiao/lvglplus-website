@@ -1,0 +1,2013 @@
+{
+  "signals": [
+    {
+      "name": "running",
+      "type": "boolean",
+      "initial": true,
+      "timeoutMs": 0,
+      "unit": ""
+    },
+    {
+      "name": "rate",
+      "type": "number",
+      "initial": 1,
+      "timeoutMs": 0,
+      "unit": ""
+    },
+    {
+      "name": "direction",
+      "type": "integer",
+      "initial": 1,
+      "timeoutMs": 0,
+      "unit": ""
+    },
+    {
+      "name": "stress",
+      "type": "boolean",
+      "initial": false,
+      "timeoutMs": 0,
+      "unit": ""
+    },
+    {
+      "name": "economy",
+      "type": "boolean",
+      "initial": false,
+      "timeoutMs": 0,
+      "unit": ""
+    },
+    {
+      "name": "plant.ms",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": ""
+    },
+    {
+      "name": "load",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 3
+        },
+        {
+          "op": "jump_false",
+          "signal": 2
+        },
+        {
+          "op": "const",
+          "value": 94
+        },
+        {
+          "op": "jump",
+          "signal": 8
+        },
+        {
+          "op": "const",
+          "value": 62
+        },
+        {
+          "op": "const",
+          "value": 16
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 2000
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "power",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 6
+        },
+        {
+          "op": "const",
+          "value": 12.5
+        },
+        {
+          "op": "mul"
+        }
+      ]
+    },
+    {
+      "name": "temperature",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 3
+        },
+        {
+          "op": "jump_false",
+          "signal": 2
+        },
+        {
+          "op": "const",
+          "value": 86
+        },
+        {
+          "op": "jump",
+          "signal": 8
+        },
+        {
+          "op": "const",
+          "value": 42
+        },
+        {
+          "op": "const",
+          "value": 6
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 3000
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "warning",
+      "type": "boolean",
+      "initial": false,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 8
+        },
+        {
+          "op": "const",
+          "value": 75
+        },
+        {
+          "op": "gt"
+        }
+      ]
+    },
+    {
+      "name": "gaugeEnd",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 135
+        },
+        {
+          "op": "load",
+          "signal": 6
+        },
+        {
+          "op": "const",
+          "value": 2.7
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "spin",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 2
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "const",
+          "value": 0.035
+        },
+        {
+          "op": "mul"
+        }
+      ]
+    },
+    {
+      "name": "rpm",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 0
+        },
+        {
+          "op": "jump_false",
+          "signal": 15
+        },
+        {
+          "op": "load",
+          "signal": 3
+        },
+        {
+          "op": "jump_false",
+          "signal": 2
+        },
+        {
+          "op": "const",
+          "value": 1480
+        },
+        {
+          "op": "jump",
+          "signal": 8
+        },
+        {
+          "op": "const",
+          "value": 960
+        },
+        {
+          "op": "const",
+          "value": 120
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 2000
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "load",
+          "signal": 1
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "jump",
+          "signal": 1
+        },
+        {
+          "op": "const",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "name": "stateColor",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 9
+        },
+        {
+          "op": "jump_false",
+          "signal": 2
+        },
+        {
+          "op": "const",
+          "value": 16754275
+        },
+        {
+          "op": "jump",
+          "signal": 1
+        },
+        {
+          "op": "const",
+          "value": 6809794
+        }
+      ]
+    },
+    {
+      "name": "channels.0.load",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 6
+        },
+        {
+          "op": "const",
+          "value": 0
+        },
+        {
+          "op": "const",
+          "value": 9
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "sub"
+        },
+        {
+          "op": "const",
+          "value": 6
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 1500
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "const",
+          "value": 0
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "const",
+          "value": 0
+        },
+        {
+          "op": "const",
+          "value": 100
+        },
+        {
+          "op": "clamp"
+        }
+      ]
+    },
+    {
+      "name": "channels.0.temperature",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 8
+        },
+        {
+          "op": "const",
+          "value": 0
+        },
+        {
+          "op": "const",
+          "value": 1.5
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "channels.1.load",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 6
+        },
+        {
+          "op": "const",
+          "value": 1
+        },
+        {
+          "op": "const",
+          "value": 9
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "sub"
+        },
+        {
+          "op": "const",
+          "value": 6
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 1500
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "const",
+          "value": 1
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "const",
+          "value": 0
+        },
+        {
+          "op": "const",
+          "value": 100
+        },
+        {
+          "op": "clamp"
+        }
+      ]
+    },
+    {
+      "name": "channels.1.temperature",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 8
+        },
+        {
+          "op": "const",
+          "value": 1
+        },
+        {
+          "op": "const",
+          "value": 1.5
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "channels.2.load",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 6
+        },
+        {
+          "op": "const",
+          "value": 2
+        },
+        {
+          "op": "const",
+          "value": 9
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "sub"
+        },
+        {
+          "op": "const",
+          "value": 6
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 1500
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "const",
+          "value": 2
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "const",
+          "value": 0
+        },
+        {
+          "op": "const",
+          "value": 100
+        },
+        {
+          "op": "clamp"
+        }
+      ]
+    },
+    {
+      "name": "channels.2.temperature",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 8
+        },
+        {
+          "op": "const",
+          "value": 2
+        },
+        {
+          "op": "const",
+          "value": 1.5
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "channels.3.load",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 6
+        },
+        {
+          "op": "const",
+          "value": 3
+        },
+        {
+          "op": "const",
+          "value": 9
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "sub"
+        },
+        {
+          "op": "const",
+          "value": 6
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 1500
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "const",
+          "value": 3
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "const",
+          "value": 0
+        },
+        {
+          "op": "const",
+          "value": 100
+        },
+        {
+          "op": "clamp"
+        }
+      ]
+    },
+    {
+      "name": "channels.3.temperature",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 8
+        },
+        {
+          "op": "const",
+          "value": 3
+        },
+        {
+          "op": "const",
+          "value": 1.5
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.0",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 0
+        },
+        {
+          "op": "not"
+        }
+      ]
+    },
+    {
+      "name": "_binding.1",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 4
+        }
+      ]
+    },
+    {
+      "name": "_binding.2",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 11
+        },
+        {
+          "op": "const",
+          "value": 0
+        },
+        {
+          "op": "const",
+          "value": 120
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.3",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 11
+        },
+        {
+          "op": "const",
+          "value": 1
+        },
+        {
+          "op": "const",
+          "value": 120
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.4",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 11
+        },
+        {
+          "op": "const",
+          "value": 2
+        },
+        {
+          "op": "const",
+          "value": 120
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.5",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 4
+        },
+        {
+          "op": "not"
+        }
+      ]
+    },
+    {
+      "name": "_binding.6",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 11
+        },
+        {
+          "op": "const",
+          "value": 0
+        },
+        {
+          "op": "const",
+          "value": 120
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.7",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 11
+        },
+        {
+          "op": "const",
+          "value": 1
+        },
+        {
+          "op": "const",
+          "value": 120
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.8",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 11
+        },
+        {
+          "op": "const",
+          "value": 2
+        },
+        {
+          "op": "const",
+          "value": 120
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.9",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 11
+        },
+        {
+          "op": "neg"
+        }
+      ]
+    },
+    {
+      "name": "_binding.10",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 10
+        },
+        {
+          "op": "const",
+          "value": 12
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 1000
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.11",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 60
+        },
+        {
+          "op": "const",
+          "value": 12
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 1000
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "cos"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.12",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 170
+        },
+        {
+          "op": "const",
+          "value": 80
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 1200
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.13",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 153
+        },
+        {
+          "op": "const",
+          "value": 0
+        },
+        {
+          "op": "const",
+          "value": 35
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.14",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 153
+        },
+        {
+          "op": "const",
+          "value": 1
+        },
+        {
+          "op": "const",
+          "value": 35
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.15",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 153
+        },
+        {
+          "op": "const",
+          "value": 2
+        },
+        {
+          "op": "const",
+          "value": 35
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.16",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 153
+        },
+        {
+          "op": "const",
+          "value": 3
+        },
+        {
+          "op": "const",
+          "value": 35
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.17",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 28
+        },
+        {
+          "op": "load",
+          "signal": 3
+        },
+        {
+          "op": "jump_false",
+          "signal": 2
+        },
+        {
+          "op": "const",
+          "value": 44
+        },
+        {
+          "op": "jump",
+          "signal": 1
+        },
+        {
+          "op": "const",
+          "value": 20
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 500
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "const",
+          "value": 0
+        },
+        {
+          "op": "const",
+          "value": 0.9
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.18",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 28
+        },
+        {
+          "op": "load",
+          "signal": 3
+        },
+        {
+          "op": "jump_false",
+          "signal": 2
+        },
+        {
+          "op": "const",
+          "value": 44
+        },
+        {
+          "op": "jump",
+          "signal": 1
+        },
+        {
+          "op": "const",
+          "value": 20
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 500
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "const",
+          "value": 1
+        },
+        {
+          "op": "const",
+          "value": 0.9
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.19",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 28
+        },
+        {
+          "op": "load",
+          "signal": 3
+        },
+        {
+          "op": "jump_false",
+          "signal": 2
+        },
+        {
+          "op": "const",
+          "value": 44
+        },
+        {
+          "op": "jump",
+          "signal": 1
+        },
+        {
+          "op": "const",
+          "value": 20
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 500
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "const",
+          "value": 2
+        },
+        {
+          "op": "const",
+          "value": 0.9
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.20",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 28
+        },
+        {
+          "op": "load",
+          "signal": 3
+        },
+        {
+          "op": "jump_false",
+          "signal": 2
+        },
+        {
+          "op": "const",
+          "value": 44
+        },
+        {
+          "op": "jump",
+          "signal": 1
+        },
+        {
+          "op": "const",
+          "value": 20
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 500
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "const",
+          "value": 3
+        },
+        {
+          "op": "const",
+          "value": 0.9
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.21",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 28
+        },
+        {
+          "op": "load",
+          "signal": 3
+        },
+        {
+          "op": "jump_false",
+          "signal": 2
+        },
+        {
+          "op": "const",
+          "value": 44
+        },
+        {
+          "op": "jump",
+          "signal": 1
+        },
+        {
+          "op": "const",
+          "value": 20
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 500
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "const",
+          "value": 4
+        },
+        {
+          "op": "const",
+          "value": 0.9
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.22",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 28
+        },
+        {
+          "op": "load",
+          "signal": 3
+        },
+        {
+          "op": "jump_false",
+          "signal": 2
+        },
+        {
+          "op": "const",
+          "value": 44
+        },
+        {
+          "op": "jump",
+          "signal": 1
+        },
+        {
+          "op": "const",
+          "value": 20
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 500
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "const",
+          "value": 5
+        },
+        {
+          "op": "const",
+          "value": 0.9
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.23",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 28
+        },
+        {
+          "op": "load",
+          "signal": 3
+        },
+        {
+          "op": "jump_false",
+          "signal": 2
+        },
+        {
+          "op": "const",
+          "value": 44
+        },
+        {
+          "op": "jump",
+          "signal": 1
+        },
+        {
+          "op": "const",
+          "value": 20
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 500
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "const",
+          "value": 6
+        },
+        {
+          "op": "const",
+          "value": 0.9
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.24",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 28
+        },
+        {
+          "op": "load",
+          "signal": 3
+        },
+        {
+          "op": "jump_false",
+          "signal": 2
+        },
+        {
+          "op": "const",
+          "value": 44
+        },
+        {
+          "op": "jump",
+          "signal": 1
+        },
+        {
+          "op": "const",
+          "value": 20
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 500
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "const",
+          "value": 7
+        },
+        {
+          "op": "const",
+          "value": 0.9
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.25",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 28
+        },
+        {
+          "op": "load",
+          "signal": 3
+        },
+        {
+          "op": "jump_false",
+          "signal": 2
+        },
+        {
+          "op": "const",
+          "value": 44
+        },
+        {
+          "op": "jump",
+          "signal": 1
+        },
+        {
+          "op": "const",
+          "value": 20
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 500
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "const",
+          "value": 8
+        },
+        {
+          "op": "const",
+          "value": 0.9
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.26",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 28
+        },
+        {
+          "op": "load",
+          "signal": 3
+        },
+        {
+          "op": "jump_false",
+          "signal": 2
+        },
+        {
+          "op": "const",
+          "value": 44
+        },
+        {
+          "op": "jump",
+          "signal": 1
+        },
+        {
+          "op": "const",
+          "value": 20
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 500
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "const",
+          "value": 9
+        },
+        {
+          "op": "const",
+          "value": 0.9
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.27",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 28
+        },
+        {
+          "op": "load",
+          "signal": 3
+        },
+        {
+          "op": "jump_false",
+          "signal": 2
+        },
+        {
+          "op": "const",
+          "value": 44
+        },
+        {
+          "op": "jump",
+          "signal": 1
+        },
+        {
+          "op": "const",
+          "value": 20
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 500
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "const",
+          "value": 10
+        },
+        {
+          "op": "const",
+          "value": 0.9
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.28",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "const",
+          "value": 28
+        },
+        {
+          "op": "load",
+          "signal": 3
+        },
+        {
+          "op": "jump_false",
+          "signal": 2
+        },
+        {
+          "op": "const",
+          "value": 44
+        },
+        {
+          "op": "jump",
+          "signal": 1
+        },
+        {
+          "op": "const",
+          "value": 20
+        },
+        {
+          "op": "load",
+          "signal": 5
+        },
+        {
+          "op": "const",
+          "value": 500
+        },
+        {
+          "op": "div"
+        },
+        {
+          "op": "const",
+          "value": 11
+        },
+        {
+          "op": "const",
+          "value": 0.9
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        },
+        {
+          "op": "sin"
+        },
+        {
+          "op": "mul"
+        },
+        {
+          "op": "add"
+        }
+      ]
+    },
+    {
+      "name": "_binding.29",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 4
+        },
+        {
+          "op": "not"
+        }
+      ]
+    },
+    {
+      "name": "_binding.30",
+      "type": "number",
+      "initial": 0,
+      "timeoutMs": 0,
+      "unit": "",
+      "derived": [
+        {
+          "op": "load",
+          "signal": 9
+        },
+        {
+          "op": "not"
+        }
+      ]
+    }
+  ]
+}

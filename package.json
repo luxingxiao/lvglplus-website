@@ -8,7 +8,9 @@
     "preview": "astro preview --host 127.0.0.1",
     "test": "node --test tests/*.test.mjs",
     "sync:demo": "node scripts/sync-demo.mjs",
-    "design:generate": "python3 .agents/skills/ui-ux-pro-max/scripts/search.py \"open-source developer platform landing\" --design-system -p \"LVGL Plus\" -f markdown"
+    "design:generate": "python3 .agents/skills/ui-ux-pro-max/scripts/search.py \"open-source developer platform landing\" --design-system -p \"LVGL Plus\" -f markdown",
+    "sync:energy": "node scripts/sync-energy.mjs",
+    "test:browser": "node scripts/check-browser.mjs && node scripts/check-energy-browser.mjs"
   },
   "license": "Apache-2.0",
   "type": "module",

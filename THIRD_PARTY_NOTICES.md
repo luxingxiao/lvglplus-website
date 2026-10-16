@@ -13,3 +13,7 @@ The generated static website includes the following third-party materials. Origi
 | Emscripten runtime support | MIT and University of Illinois/NCSA | `licenses/Emscripten.txt` |
 
 Astro and the UI UX Pro Max CLI are build/development tools. Their package licenses remain in the installed dependencies. The site is independently implemented and does not distribute LVGL Pro source, metadata or proprietary XML definitions.
+
+## Energy console demo
+
+`public/demo/energy` bundles another copy of the LVGL/Plus C runtime, UI package, native screenshot and project-authored XML/Model from the SDK commit recorded in its `provenance.json`. The same LVGL MIT, Plus Apache-2.0, Montserrat OFL, LodePNG and Emscripten notices above apply. Full LVGL and Plus license texts are also included next to these artifacts. The example adds no third-party application assets or C widgets.

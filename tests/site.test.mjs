@@ -6,7 +6,7 @@ import path from 'node:path';
 const root=path.resolve('dist'),base='/lvglplus-website/';
 async function walk(dir){const out=[];for(const e of await readdir(dir,{withFileTypes:true})){const p=path.join(dir,e.name);out.push(...e.isDirectory()?await walk(p):[p]);}return out;}
 test('every bilingual page and internal URL resolves under project Pages base',async()=>{
- const files=(await walk(root)).filter(f=>f.endsWith('.html'));assert.equal(files.length,19);
+ const files=(await walk(root)).filter(f=>f.endsWith('.html'));assert.equal(files.length,21);
  for(const file of files){const html=await readFile(file,'utf8');assert.match(html,/<html[^>]+lang="(?:zh-CN|en)"/);assert.match(html,/<title>[^<]+<\/title>/);assert.match(html,/rel="canonical"/);
  for(const match of html.matchAll(/(?:href|src)="([^"#]+)(?:#[^"]*)?"/g)){
  const url=match[1].split('#')[0].split('?')[0];if(/^(?:https?:|data:|mailto:)/.test(url))continue;

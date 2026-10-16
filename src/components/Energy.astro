@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from './Icon.astro';
+import {base,home,tr,repo,type Lang} from '../content/site';
+import provenance from '../../public/demo/energy/provenance.json';
+const {lang='zh'}=Astro.props as {lang:Lang};
+const t=(zh:string,en:string)=>tr(lang,zh,en);
+const source=repo+'/tree/'+provenance.commit+'/examples/energy-console';
+const controls=[['pause','暂停 / 继续','Pause / run'],['speed','切换倍速','1× / 2× speed'],['reverse','反转涡轮','Reverse'],['stress','切换负载','Load step'],['quality','精细 / 草图','Detail / draft'],['reset','复位','Reset']];
+const features=[['01','平滑的能量流。','Smooth energy in motion.','观察环形负载表与三叶涡轮：角向拖尾、径向衰减、透明内圈和旋转分层，全部由 LVGL 绘制。','Watch the annular gauge and three-blade turbine: angular trails, radial fades, inner cutouts and layered rotation, all drawn by LVGL.'],['02','同一模型，立即响应。','One model. Immediate feedback.','切换负载，功率、温度与告警同时变化。暂停、倍速和反转均由共享 C 核心执行。','A load step updates power, temperature and warnings together. The shared C core executes pause, speed and direction changes.'],['03','细节，可以比较。','Compare the details.','切换 224px 与 64px 覆盖精度；观察动态曲线、虚线与过载波形裁剪。无需应用自定义 C 控件。','Compare 224px and 64px coverage, dynamic curves, dashed paths and clipped overload waveforms. No application-specific C widgets.']];
+---
+<Base lang={lang} title={t('能源控制台在线预览 — LVGL Plus','Energy Console Live Preview — LVGL Plus')} description={t('在线体验真实 LVGL/WASM 微电网能源控制台：平滑渐变、旋转涡轮、动态曲线和交互控制。','Try the real LVGL/WASM microgrid energy console: smooth gradients, rotating turbines, dynamic curves and interactive controls.')} example="energy-console">
+<main id="main" class="energy-page container">
+  <a class="text-link energy-back" href={home(lang)}><Icon name="left" size={16}/>{t('返回 LVGL Plus','Back to LVGL Plus')}</a>
+  <header class="energy-heading"><span class="eyebrow">LIVE EXAMPLE / AURORA ENERGY</span><h1>{t('让每个细节，','Every detail.')}<br/><span class="accent">{t('真实地运行。','Running for real.')}</span></h1><p>{t('一座微电网，一套声明式模型。直接操作下面的能源控制台，体验由真实 LVGL 驱动的复杂仪表。','One microgrid. One declarative model. Explore a complex instrument powered by the real LVGL engine.')}</p><div class="energy-tags"><span>LVGL 9.5 / WASM</span><span>1024 × 600</span><span>{t('无应用自定义 C','No custom application C')}</span></div></header>
+  <section class="energy-live" aria-labelledby="energy-preview-title" data-energy data-base={base} data-lang={lang}>
+    <div class="energy-toolbar"><h2 id="energy-preview-title">AURORA / ENERGY LAB</h2><span>{t('合成工况 · 不连接设备','Synthetic data · No device connected')}</span></div>
+    <div class="energy-screen">
+      <img class="energy-poster" src={base+'demo/energy/poster.png'} width="1024" height="600" alt={t('LVGL 原生渲染的能源控制台，包含负载环表、涡轮、分配曲线和动态波形','Native LVGL energy console with a load gauge, turbine, distribution curves and waveform')} fetchpriority="high"/>
+      <canvas class="energy-canvas" width="1024" height="600" tabindex="0" aria-label={t('真实 LVGL 能源控制台，可用鼠标、触摸或键盘操作','Real LVGL energy console. Use pointer, touch or keyboard controls.')} aria-describedby="energy-help" hidden></canvas>
+      <div class="energy-cover"><button class="energy-launch button primary"><Icon name="play" size={16}/>{t('启动交互预览','Launch live preview')}</button><span>{t('按需加载真实 LVGL/WASM；加载前展示原生截图','Real LVGL/WASM loads on demand. Native screenshot shown above.')}</span></div>
+    </div>
+    <div class="energy-controls" aria-label={t('控制台操作','Console controls')}>{controls.map(([command,zh,en])=><button class="energy-command" data-command={command} disabled aria-pressed={command==='reset'?undefined:'false'}>{t(zh,en)}</button>)}</div>
+    <div class="energy-readings" aria-label={t('当前模型数据','Current model readings')}>
+      <div><span>{t('输出功率','Power')}</span><output aria-live="off" data-reading="power">775 kW</output></div>
+      <div><span>{t('温度','Temperature')}</span><output aria-live="off" data-reading="temperature">42 °C</output></div>
+      <div><span>{t('转速','Rotor speed')}</span><output aria-live="off" data-reading="rpm">960 RPM</output></div>
+      <div><span>{t('模型时钟','Model clock')}</span><output aria-live="off" data-reading="clock">0 ms</output></div>
+    </div>
+    <p class="energy-status" role="status" aria-atomic="true">{t('预览尚未启动。静态画面同样由 LVGL 绘制。','Preview not started. The static image is also rendered by LVGL.')}</p>
+    <p id="energy-help" class="energy-help">{t('可直接点击画面或使用上方按钮。聚焦画布后：Enter 暂停，← 反转，→ 倍速，↑ 负载，↓ 精度，Esc 复位。','Use the display or the buttons above. Focus the canvas: Enter pauses, ← reverses, → changes speed, ↑ changes load, ↓ changes detail, Esc resets.')}</p>
+  </section>
+  <section class="energy-features" aria-label={t('渲染能力','Rendering capabilities')}>{features.map(([n,zhTitle,enTitle,zhBody,enBody])=><article><span class="eyebrow">{n} / RENDERING</span><h2>{t(zhTitle,enTitle)}</h2><p>{t(zhBody,enBody)}</p></article>)}</section>
+  <section class="energy-source"><div><span class="eyebrow">OPEN SOURCE / REPRODUCIBLE</span><h2>{t('从这里，带回你的项目。','Take it into your project.')}</h2><p>{t('XML、Model 和验证记录全部开放。七个确定性场景已在原生、生成 C 与 WASM 三条路径进行精确比较。','XML, Model and verification are open. Seven deterministic scenarios compare native, generated C and WASM output exactly.')}</p><div class="energy-source-links"><a class="button secondary" href={source}>{t('查看完整示例','Explore the example')}<Icon name="arrow" size={16}/></a><a class="text-link" href={base+'demo/energy/source/dashboard.xml'} download>{t('下载 UI XML','Download UI XML')}</a><a class="text-link" href={base+'demo/energy/source/model.xml'} download>{t('下载 Model','Download Model')}</a></div></div><aside><strong>{t('演示范围','Demo boundaries')}</strong><p>{t('全部数据为合成值，不包含真实能源控制或设备连接。精度切换保留已创建的覆盖缓存，不代表实时释放内存。真实板卡内存和帧率需单独验证。','All values are synthetic. No real energy control or device connection. Detail switching retains created coverage caches; it does not promise live memory reclamation. Board memory and frame rate require separate testing.')}</p><a href={base+'demo/energy/provenance.json'}>{t('版本与文件校验记录','Source revision & asset hashes')} · {provenance.commit.slice(0,7)}</a></aside></section>
+</main>
+<script>import '../scripts/energy';</script>
+</Base>

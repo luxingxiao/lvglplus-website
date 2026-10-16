@@ -47,3 +47,24 @@ For browser checks, install Chrome and run `node scripts/check-browser.mjs` whil
 ## License
 
 Website code: Apache-2.0. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the LVGL MIT license, font OFL licenses and bundled runtime notices. UUPM is a development tool, not shipped with the static website.
+
+## Energy console preview
+
+The bilingual energy console is available at `/examples/energy-console/` and `/en/examples/energy-console/` below the project Pages base. The homepage and navigation link to it. It loads a separate real LVGL/WASM runtime on demand, preserving the existing vehicle demo.
+
+- LVGL paints every canvas pixel. The C model executes pause, speed, reverse, load step, detail switching and reset.
+- Canvas pointer/touch and semantic keyboard input go through the C ABI. Accessible HTML controls call the same C commands, with current readings taken from the model.
+- Reduced motion starts paused. A native screenshot remains visible before launch and after errors, with a retry action.
+- `public/demo/energy/provenance.json` pins the SDK commit, initial native RGB hash and all artifact/source/license hashes. Source links point at that exact commit, independently of whether its PR has merged.
+- Data are synthetic. No device connection or real energy control is included. Detail switching retains previously allocated caches.
+
+To update this independent example from a clean, built SDK checkout, use **Node.js 24** (the reviewed PNG baselines were generated with that version):
+
+```sh
+LVGLPLUS_SOURCE=../lvglplus npm run sync:energy
+npm run build
+npm test
+SITE_URL=http://127.0.0.1:4322/lvglplus-website/ npm run test:browser
+```
+
+The site now generates 21 HTML pages. `sync:energy` rechecks native baselines, exports the UI package/runtime/source and verifies the poster. Normal GitHub Pages builds use committed assets and require no sibling checkout or Emscripten. Browser checks cover both previews, canvas pointer/touch, model commands, language switching, four viewport widths, reduced motion, accessibility, failed WASM loading and retry.
